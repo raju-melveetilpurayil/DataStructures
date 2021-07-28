@@ -4,9 +4,10 @@ using System.Text;
 
 namespace DSA
 {
-    public class SingleLinkedList<T>
+    public class SinglyLinkedList<T>
     {
         private Node<T> head { get; set; }
+        private Node<T> tail { get; set; }
         public void Search(T search)
         {
             Console.WriteLine($"Searching {search} the Linked List");
@@ -36,14 +37,12 @@ namespace DSA
             if (head == null)
             {
                 head = newNode;
+                tail = head;
             }
             else
             {
-                while (current.Next != null)
-                {
-                    current = current.Next;
-                }
-                current.Next = newNode;
+                tail.Next = newNode;
+                tail = newNode;
             }
         }
         public void Print()
