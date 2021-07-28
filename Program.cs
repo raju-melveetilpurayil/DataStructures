@@ -7,11 +7,21 @@ namespace DSA
         static void Main(string[] args)
         {
             int[] numbers = new int[] { 1, 2, 4, 3, 5, 7, 9 };
+
             LinkedList<int> linkedList = new LinkedList<int>();
+
             for (int i = 0; i < numbers.Length; i++)
             {
                 linkedList.Add(numbers[i]);
             }
+
+            bool found = linkedList.Search(5);
+            Console.WriteLine($"Found 5 in list? {(found ? "Yes" : "No")}");
+
+            found = linkedList.Search(10);
+            Console.WriteLine($"Found 10 in list? {(found ? "Yes" : "No")}");
+
+            Console.ReadLine();
         }
     }
 }
