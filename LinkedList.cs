@@ -7,21 +7,9 @@ namespace DSA
     public class LinkedList<T>
     {
         private Node<T> head { get; set; }
-        private int length { get; set; }
         public bool Search(Node<T> list,T search)
         {
             bool found = false;
-            while (!found)
-            {
-                if (list.Data.ToString() == search.ToString())
-                {
-                    found = true;
-                }
-                else
-                {
-                    Search(list.Next, search);
-                }
-            }
             return found;
         }
         public void Add(T item)
