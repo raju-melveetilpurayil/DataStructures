@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DSA
 {
-    public class LinkedList<T>
+    public class SingleLinkedList<T>
     {
         private Node<T> head { get; set; }
         public void Search(T search)
@@ -52,7 +52,7 @@ namespace DSA
             Console.WriteLine("Printing the Linked List");
             if (head != null)
             {
-                var current = head;
+                Node<T> current = head;
                 while (current != null)
                 {
                    
