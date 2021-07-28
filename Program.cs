@@ -15,11 +15,14 @@ namespace DSA
                 linkedList.Add(numbers[i]);
             }
 
-            bool found = linkedList.Search(5);
-            Console.WriteLine($"Found 5 in list? {(found ? "Yes" : "No")}");
+            linkedList.Print();
+            linkedList.Delete(4);
+            linkedList.Print();
+            linkedList.Delete(9);
+            linkedList.Print();
 
-            found = linkedList.Search(10);
-            Console.WriteLine($"Found 10 in list? {(found ? "Yes" : "No")}");
+            linkedList.Search(5);
+            linkedList.Search(10);
 
             Console.ReadLine();
         }
