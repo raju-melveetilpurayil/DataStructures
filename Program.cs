@@ -22,10 +22,10 @@ namespace DSA
             linkedList.Add(15);
             linkedList.Print();
 
-            //linkedList.Delete(1);
-            //linkedList.Delete(3);
-            //linkedList.Delete(9);
-            //linkedList.Print();
+            linkedList.Delete(1);
+            linkedList.Delete(3);
+            linkedList.Delete(9);
+            linkedList.Print();
 
 
             Console.ReadLine();
