@@ -8,6 +8,27 @@ namespace DSA
     {
         private Node<T> head { get; set; }
         private Node<T> tail { get; set; }
+        public void Searchq(T search)
+        {
+            Console.WriteLine($"Searching {search} the Linked List");
+
+            bool found = false;
+
+            Node<T> current = head;
+            while (current != null)
+            {
+                if (current.Data.GetHashCode() == search.GetHashCode())
+                {
+                    found = true;
+                    break;
+                }
+                current = current.Next;
+            }
+
+            Console.WriteLine($"{search} {(found ? "" : "not ")}found in the Linked List");
+            Console.WriteLine();
+
+        }
         public void Search(T search)
         {
             Console.WriteLine($"Searching {search} the Linked List");
@@ -33,7 +54,6 @@ namespace DSA
         public void Add(T item)
         {
             Node<T> newNode = new Node<T>(item);
-            Node<T> current = head;
             if (head == null)
             {
                 head = newNode;
@@ -67,36 +87,42 @@ namespace DSA
         public void Delete(T item)
         {
             Console.WriteLine($"Deleting {item} from Linked List");
-            if (head != null)
+
+            Node<T> current = head;
+            Node<T> previous = head;
+            while (current != null)
             {
-                var current = head;
-                //if deleteing head
                 if (current.Data.GetHashCode() == item.GetHashCode())
                 {
-                    if (current.Next != null)
+                    if (current == head)
                     {
                         head = current.Next;
                     }
                     else
                     {
-                        head = null;
+                        previous.Next = current.Next;
                     }
+                    break;
                 }
-                else
-                {
-                    while (current.Next != null && current.Next.Data.GetHashCode() != item.GetHashCode())
-                    {
-                        current = current.Next;
-                    }
-
-                    if (current.Next.Data.GetHashCode() == item.GetHashCode())
-                    {
-                        //Delete the connection
-                        current.Next = current.Next.Next;
-                    }
-                }
+                previous = current;
+                current = current.Next;
             }
             Console.WriteLine();
+        }
+        public  void Reverse()
+        {
+            var current = head;
+            tail = head;
+            Node<T> previous = null;
+
+            while (current!= null)
+            {
+                var temp = current.Next;
+                current.Next = previous;
+                previous = current;
+                current=temp;
+            }
+            head = previous;
         }
     }
     public class Node<T>

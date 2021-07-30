@@ -14,15 +14,19 @@ namespace DSA
             {
                 linkedList.Add(numbers[i]);
             }
-
             linkedList.Print();
-            linkedList.Delete(4);
-            linkedList.Print();
-            linkedList.Delete(9);
+            linkedList.Reverse();
             linkedList.Print();
 
-            linkedList.Search(5);
-            linkedList.Search(10);
+
+            linkedList.Add(15);
+            linkedList.Print();
+
+            //linkedList.Delete(1);
+            //linkedList.Delete(3);
+            //linkedList.Delete(9);
+            //linkedList.Print();
+
 
             Console.ReadLine();
         }
